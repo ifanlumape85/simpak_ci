@@ -1,0 +1,2 @@
+<small>
+    <strong>Copyright &copy; 2023 <?php echo anchor(base_url(), 'SIMPAK', array('target' => '_blank')); ?></strong> | <strong><?php echo safe_mailto('ifanlumape19@gmail.com', 'Error Reporting'); ?></strong></small>
