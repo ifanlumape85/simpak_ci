@@ -741,10 +741,11 @@ class Presensi extends CI_Controller
 
 	function presensi_pegawai()
 	{
-		$id = $_POST['id'];
-		$query = $_POST['query'];
-		$limit = $_POST['limit'];
-		$start = $_POST['start'];
+		// update disini
+		$id = $_POST['id'] ?? 2523;
+		$query = $_POST['query'] ?? '';
+		$limit = $_POST['limit'] ?? 10;
+		$start = $_POST['start'] ?? 0;
 
 		$sql = "
 			SELECT
