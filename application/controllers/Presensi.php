@@ -751,7 +751,7 @@ class Presensi extends CI_Controller
 			SELECT
 				absensi.*,
 				jenis_presensi.nama_jenis_presensi,
-				pegawai.nama_pegawai, pegawai.photo as photo_pegawai, pegawai.id_pegawai,
+				pegawai.nama_pegawai, pegawai.photo as photo_pegawai,
 				status_presensi.nama_status_presensi
 			FROM
 				presensi as absensi
