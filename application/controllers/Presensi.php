@@ -751,7 +751,7 @@ class Presensi extends CI_Controller
 			SELECT
 				absensi.*,
 				jenis_presensi.nama_jenis_presensi,
-				pegawai.nama_pegawai, pegawai.photo as photo_pegawai,
+				pegawai.nama_pegawai, pegawai.photo as photo_pegawai, pegawai.nip,
 				status_presensi.nama_status_presensi
 			FROM
 				presensi as absensi
@@ -781,12 +781,12 @@ class Presensi extends CI_Controller
 						"tgl_presensi_" => tgl_indonesia2($row->tgl_presensi),
 						"jam_presensi" => $row->jam_presensi,
 						"id_jenis_presensi" => $row->id_jenis_presensi,
-						"nama_jenis_presensi" => $this->jenis_presensi->get_nama_jenis_presensi($row->id_jenis_presensi),
+						"nama_jenis_presensi" => $row->nama_jenis_presensi,
 						"id_pegawai" => $row->id_pegawai,
-						"nama_pegawai" => $this->pegawai->get_nama_pegawai($row->id_pegawai),
-						"nip" => $this->pegawai->get_nip_pegawai($row->id_pegawai),
+						"nama_pegawai" => $row->nama_pegawai,
+						"nip" => $row->nip,
 						"id_status_presensi" => $row->id_status_presensi,
-						"nama_status_presensi" => $this->status_presensi->get_nama_status_presensi($row->id_status_presensi),
+						"nama_status_presensi" => $row->nama_status_presensi,
 						"photo" => $row->photo_pegawai,
 						"id_verifikator" => $row->id_verifikator,
 						"lat" => $row->lat,
