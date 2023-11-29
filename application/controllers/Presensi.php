@@ -460,8 +460,8 @@ class Presensi extends CI_Controller
 					// MENGIKUTI JADWAL
 					elseif ($ikut_jadwal == 'Y') {
 						// jika jadwal sudah diatur
-						if ($cek_jadwals->num_rows() > 0) {
-							$cek_jadwal = $cek_jadwals->row();
+						if ($cek_jadwals != null) {
+							$cek_jadwal = $cek_jadwals;
 
 							if ($cek == 0) {
 								if ($cek_jadwal->mulai != "" && $cek_jadwal->akhir != "") {
