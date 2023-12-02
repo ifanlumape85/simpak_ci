@@ -6,7 +6,7 @@ require_once 'dompdf-master/autoload.inc.php';
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
-class Pdfgenerator
+class PdfGenerator
 {
   public function generate($html, $filename = '', $paper = '', $orientation = '', $stream = TRUE)
   {

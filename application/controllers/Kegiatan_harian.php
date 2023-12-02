@@ -266,7 +266,7 @@ class Kegiatan_harian extends CI_Controller
 	function laporan_pdf()
 	{
 		// $this->load->library('pdf');
-		$this->load->library('pdfgenerator');
+		$this->load->library('PdfGenerator');
 		$id_pegawai = $this->uri->segment(3);
 		$tgl_mulai = $this->uri->segment(4);
 		$tgl_mulai = date('Y-m-d', strtotime($tgl_mulai));

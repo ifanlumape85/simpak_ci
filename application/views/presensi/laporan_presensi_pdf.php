@@ -8,6 +8,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>CATATAN PRESENSI HARIAN</title>
     <style>
+        body {
+            font-size: 10px;
+            /* font-family: Arial, Helvetica, sans-serif; */
+        }
+
         #tabel {
             font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
             border-collapse: collapse;

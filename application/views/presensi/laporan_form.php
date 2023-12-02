@@ -53,10 +53,8 @@
         });
 
         $('#btn-cetak').click(function() { //button filter event click
-            alert('ok');
+            laporan_pdf();
         });
-
-
 
         $('#btn-reset').click(function() { //button reset event click
             if (user_level_id == 1) {
@@ -126,5 +124,13 @@
                 alert('Error get data from ajax');
             }
         });
+    }
+
+    function laporan_pdf() {
+        var id_pegawai = $('select[name=id_pegawai2]').val();
+        var tanggal_awal = $('[name=tgl_mulai]').val();
+        var tanggal_akhir = $('[name=tgl_selesai]').val();
+        console.log(id_pegawai + " " + tanggal_awal + " " + tanggal_akhir);
+        window.location.href = base_url + 'presensi/laporan_pdf/' + id_pegawai + '/' + tanggal_awal + '/' + tanggal_akhir;
     }
 </script>
