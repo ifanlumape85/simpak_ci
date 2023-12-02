@@ -91,6 +91,7 @@
 
     function get_report_kinerja() {
         var id_pegawai = $('select[name=id_pegawai2]').val();
+        var id_instansi = $('select[name=id_instansi2]').val();
         var tanggal_awal = $('[name=tgl_awal]').val();
         var tanggal_akhir = $('[name=tgl_akhir]').val();
 
@@ -98,6 +99,7 @@
             url: "<?php echo site_url('kegiatan_harian/laporan_kegiatan/') ?>/",
             data: {
                 id_pegawai: id_pegawai,
+                id_instansi: id_instansi,
                 tgl_awal: tanggal_awal,
                 tgl_akhir: tanggal_akhir,
                 csrf_test_name: '<?= $this->security->get_csrf_hash() ?>'

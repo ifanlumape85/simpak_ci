@@ -8,8 +8,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>CATATAN KINERJA HARIAN</title>
   <style>
+    body {
+      font-size: 10px;
+    }
+
     #tabel {
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      font-family: Arial, Helvetica, sans-serif;
       border-collapse: collapse;
       width: 100%;
     }
@@ -35,6 +40,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <td width="100%" align="center"><strong>CATATAN KINERJA HARIAN</strong></td>
     </tr>
   </table>
+  <p>&nbsp;</p>
   <table>
     <tr>
       <td>NAMA</td>
@@ -62,6 +68,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <td>&nbsp;<?= strtoupper($tahun_anggaran) ?></td>
     </tr>
   </table>
+  <p>&nbsp;</p>
   <table id="tabel" width="100%" border="1" align="center">
     <tr bgcolor="#CCCCCC">
       <td align="center"><strong>NO.</strong></td>
@@ -135,7 +142,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
       <td align="center"><strong><u><?= strtoupper($nama_pegawai) ?></u></strong></td>
     </tr>
     <tr>
-      <td align="center">NIP. <?= strtoupper($nip_atasan) ?></td>
+      <td align="center"> <?= strtoupper($nip_atasan) ?></td>
       <td align="center"><?= strtoupper($nip) ?></td>
     </tr>
   </table>

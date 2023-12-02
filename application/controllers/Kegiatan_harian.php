@@ -265,7 +265,8 @@ class Kegiatan_harian extends CI_Controller
 
 	function laporan_pdf()
 	{
-		$this->load->library('pdf');
+		// $this->load->library('pdf');
+		$this->load->library('pdfgenerator');
 		$id_pegawai = $this->uri->segment(3);
 		$tgl_mulai = $this->uri->segment(4);
 		$tgl_mulai = date('Y-m-d', strtotime($tgl_mulai));
@@ -306,9 +307,21 @@ class Kegiatan_harian extends CI_Controller
 			'jabatan_atasan'	=> @$atasan_langsung->nama_jabatan
 		);
 
-		$this->pdf->load_view('kegiatan_harian/laporan_kinerja_pdf', $data);
-		$this->pdf->render();
-		$this->pdf->stream("laporan_kinerja.pdf");
+		// filename dari pdf ketika didownload
+		$file_pdf = 'laporan_kinerja';
+		// setting paper
+		$paper = 'A4';
+		//orientasi paper potrait / landscape
+		$orientation = "portrait";
+
+		$html = $this->load->view('kegiatan_harian/laporan_kinerja_pdf', $data, true);
+
+		// run dompdf
+		$this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+
+		// $this->pdf->load_view('kegiatan_harian/laporan_kinerja_pdf', $data);
+		// $this->pdf->render();
+		// $this->pdf->stream("laporan_kinerja.pdf");
 	}
 
 	function laporan_nilai_pdf()
