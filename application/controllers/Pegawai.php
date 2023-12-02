@@ -97,7 +97,7 @@ class Pegawai extends CI_Controller
 			$row[] = $pegawai->aktif;
 
 			if ($pegawai->photo)
-				$row[] = '<a href="' . base_url('upload/pegawai/thumbs/' . $pegawai->photo) . '" target="_blank"><img src="' . base_url('upload/pegawai/thumbs/' . $pegawai->photo) . '" class="img-responsive" /></a>';
+				$row[] = '<a href="' . base_url('upload/pegawai/' . $pegawai->photo) . '" target="_blank"><img src="' . base_url('upload/pegawai/' . $pegawai->photo) . '" class="img-responsive" /></a>';
 			else
 				$row[] = '(No photo)';
 			//add html for action
@@ -323,10 +323,9 @@ class Pegawai extends CI_Controller
 		$file 		= $this->upload->data();
 		$nama_file 	= $file['file_name'];
 
-
 		$config = array(
 			'source_image' 	=> $file['full_path'],
-			'new_image' 	=> 'upload/pegawai/thumbs/',
+			'new_image' 	=> './upload/pegawai/thumbs/',
 			'maintain_ration' => TRUE,
 			'width' 		=> 110,
 			'height' 		=> 82
