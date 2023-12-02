@@ -199,8 +199,8 @@ class Pegawai extends CI_Controller
 			//delete file
 			$pegawai = $this->pegawai->get_by_id($this->input->post('id'));
 			if (file_exists('upload/pegawai/' . $pegawai->photo) && $pegawai->photo) {
-				unlink('upload/pegawai/' . $pegawai->photo);
-				unlink('upload/pegawai/thumbs/' . $pegawai->photo);
+				@unlink('upload/pegawai/' . $pegawai->photo);
+				@unlink('upload/pegawai/thumbs/' . $pegawai->photo);
 			}
 
 			$data['photo'] = $upload;
