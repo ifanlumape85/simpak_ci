@@ -326,10 +326,10 @@ class Pegawai extends CI_Controller
 
 		$config = array(
 			'source_image' 	=> $file['full_path'],
-			'new_image' 		=> './upload/pegawai/thumbs/',
+			'new_image' 	=> 'upload/pegawai/thumbs/',
 			'maintain_ration' => TRUE,
-			'width' 			=> 110,
-			'height' 			=> 82
+			'width' 		=> 110,
+			'height' 		=> 82
 		);
 
 		$this->load->library('image_lib', $config);
