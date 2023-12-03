@@ -9,7 +9,7 @@ if ($user_photo == "") {
 
 $user_level_name = $this->session->userdata('user_level_name');
 
-$image_url = base_url('upload/pegawai/thumbs/' . $user_photo);
+$image_url = base_url('upload/pegawai/' . $user_photo);
 ?>
 
 <!DOCTYPE html>
